@@ -19,5 +19,5 @@ class PhotoSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Photo
-        fields = ["id", "title", "comment", "image", "image_url", "posted_at"]
+        fields = ["id", "title", "comment", "image_url", "posted_at"]
         read_only_fields = ["id", "image_url", "posted_at"]
