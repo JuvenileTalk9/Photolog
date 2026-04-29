@@ -10,6 +10,15 @@
       "name": "run frontend",
       "command": "npm run dev",
       "cwd": "${workspaceFolder}/frontend"
+    },
+    {
+      "type": "debugpy",
+      "request": "launch",
+      "name": "run backend",
+      "program": "${workspaceFolder}/backend/manage.py",
+      "args": ["runserver"],
+      "django": true,
+      "cwd": "${workspaceFolder}/backend"
     }
   ]
 }
