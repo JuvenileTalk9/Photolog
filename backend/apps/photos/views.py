@@ -18,10 +18,14 @@ from .serializers import PhotoSerializer
 
 
 class PhotoListCreateView(ListCreateAPIView):
+    """画像の一覧取得 / 作成 を行うAPIビュー"""
+
     queryset = Photo.objects.all()
     serializer_class = PhotoSerializer
 
 
 class PhotoDetailView(RetrieveUpdateDestroyAPIView):
+    """画像の1件取得 / 更新 / 削除 を行うAPIビュー"""
+
     queryset = Photo.objects.all()
     serializer_class = PhotoSerializer

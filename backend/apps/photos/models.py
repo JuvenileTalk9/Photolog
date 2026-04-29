@@ -19,7 +19,7 @@ class Photo(models.Model):
     comment = models.TextField(blank=True)
 
     # 画像ファイル
-    image = models.ImageField(upload_to="photos/")
+    image = models.ImageField(upload_to="photos/%Y/%m/")
 
     # 投稿日時
     posted_at = models.DateTimeField(auto_now_add=True)
