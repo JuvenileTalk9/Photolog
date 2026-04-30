@@ -57,6 +57,11 @@ class PhotoListSerializer(serializers.ModelSerializer):
         fields = ["id", "title", "thumbnail", "posted_at"]
         read_only_fields = ["id", "title", "thumbnail", "posted_at"]
 
+    def to_representation(self, instance):
+        data = super().to_representation(instance)
+        data["posted_at"] = data["posted_at"][:19].replace("-", "/").replace("T", " ")
+        return data
+
 
 class PhotoDetailSerializer(serializers.ModelSerializer):
     """写真投稿詳細の取得/修正用シリアライザ"""
@@ -65,3 +70,8 @@ class PhotoDetailSerializer(serializers.ModelSerializer):
         model = Photo
         fields = ["id", "title", "comment", "image", "location", "posted_at"]
         read_only_fields = ["id", "image", "posted_at"]
+
+    def to_representation(self, instance):
+        data = super().to_representation(instance)
+        data["posted_at"] = data["posted_at"][:19].replace("-", "/").replace("T", " ")
+        return data
