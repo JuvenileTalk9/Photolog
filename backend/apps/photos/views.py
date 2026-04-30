@@ -1,6 +1,6 @@
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from .models import Photo
-from .serializers import PhotoSerializer
+from .serializers import PhotoCreateSerializer, PhotoListSerializer, PhotoDetailSerializer
 
 # よく使うGeneric APIView 一覧
 #   クラス                        HTTPメソッド                 用途
@@ -21,11 +21,15 @@ class PhotoListCreateView(ListCreateAPIView):
     """画像の一覧取得 / 作成 を行うAPIビュー"""
 
     queryset = Photo.objects.all()
-    serializer_class = PhotoSerializer
+
+    def get_serializer_class(self):
+        if self.request.method == "POST":
+            return PhotoCreateSerializer
+        return PhotoListSerializer
 
 
 class PhotoDetailView(RetrieveUpdateDestroyAPIView):
     """画像の1件取得 / 更新 / 削除 を行うAPIビュー"""
 
     queryset = Photo.objects.all()
-    serializer_class = PhotoSerializer
+    serializer_class = PhotoDetailSerializer

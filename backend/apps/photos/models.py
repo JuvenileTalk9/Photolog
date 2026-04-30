@@ -21,5 +21,11 @@ class Photo(models.Model):
     # 画像ファイル
     image = models.ImageField(upload_to="photos/%Y/%m/")
 
+    # サムネイル
+    thumbnail = models.ImageField(upload_to="photos/%Y/%m/")
+
+    # 撮影場所
+    location = models.CharField(max_length=255, blank=True)
+
     # 投稿日時
     posted_at = models.DateTimeField(auto_now_add=True)
