@@ -13,10 +13,10 @@ class Photo(models.Model):
     # python manage.py migrate
 
     # 写真タイトル
-    title = models.CharField(max_length=255)
+    title = models.CharField(max_length=32)
 
     # コメント
-    comment = models.TextField(blank=True)
+    comment = models.TextField(blank=True, max_length=255)
 
     # 画像ファイル
     image = models.ImageField(upload_to="photos/%Y/%m/")
@@ -25,7 +25,7 @@ class Photo(models.Model):
     thumbnail = models.ImageField(upload_to="photos/%Y/%m/")
 
     # 撮影場所
-    location = models.CharField(max_length=255, blank=True)
+    location = models.CharField(max_length=32, blank=True)
 
     # 投稿日時
     posted_at = models.DateTimeField(auto_now_add=True)
