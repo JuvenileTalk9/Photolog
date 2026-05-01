@@ -1,0 +1,100 @@
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(250, 250, 248, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid #e8e8e5;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  width: 34px;
+  height: 34px;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1c1c1e;
+  letter-spacing: -0.3px;
+}
+
+.search-bar {
+  flex: 1;
+  max-width: 480px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  color: #aaa;
+  pointer-events: none;
+}
+
+.search-bar input {
+  width: 100%;
+  height: 38px;
+  padding: 0 16px 0 38px;
+  border: 1.5px solid #e0e0dd;
+  border-radius: 20px;
+  background: #fff;
+  font-size: 14px;
+  color: #333;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.search-bar input::placeholder {
+  color: #bbb;
+}
+
+.search-bar input:focus {
+  border-color: #aaa;
+}
+
+.upload-btn {
+  flex-shrink: 0;
+  margin-left: auto;
+  height: 38px;
+  padding: 0 20px;
+  background: #1c1c1e;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.upload-btn:hover {
+  background: #3a3a3c;
+}
+
+main {
+  padding: 32px 24px;
+  max-width: 1800px;
+  margin: 0 auto;
+}

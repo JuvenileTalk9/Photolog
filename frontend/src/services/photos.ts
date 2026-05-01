@@ -1,13 +1,8 @@
-import type {
-  FetchPhotoResponse,
-  FetchPhotosResponse,
-  PhotoOverView,
-} from "../types";
+import type { FetchPhotosResponse } from "../types";
 
 const apiBaseUrl = import.meta.env.VITE_API_URL;
 
 export async function fetchPhotos(): FetchPhotosResponse {
-  console.log(`${apiBaseUrl}`);
   const response = await fetch(`${apiBaseUrl}`, {
     method: "GET",
     headers: {
