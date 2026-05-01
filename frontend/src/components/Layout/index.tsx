@@ -1,8 +1,10 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import "./index.css";
 import logoUrl from "../../assets/logo.svg";
 
 function Layout() {
+  const navigate = useNavigate();
+
   return (
     <>
       <header>
@@ -29,7 +31,9 @@ function Layout() {
             </svg>
             <input type="text" placeholder="タイトル・撮影場所で検索" />
           </div>
-          <button className="upload-btn">+ 投稿</button>
+          <button className="upload-btn" onClick={() => navigate("/upload")}>
+            + 投稿
+          </button>
         </div>
       </header>
       <main>

@@ -13,9 +13,3 @@ export interface Photo {
   location: string;
   posted_at: string;
 }
-
-export type FetchPhotosResponse = Promise<PhotoOverView[]>;
-
-export type FetchPhotoResponse = Promise<{
-  photo: Photo;
-}>;
