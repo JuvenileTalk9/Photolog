@@ -53,11 +53,7 @@ function Upload() {
             onChange={handleFileChange}
           />
           {previewUrl ? (
-            <img
-              className="preview-img"
-              src={previewUrl}
-              alt="プレビュー"
-            />
+            <img className="preview-img" src={previewUrl} alt="プレビュー" />
           ) : (
             <div className="image-placeholder">
               <svg
@@ -81,7 +77,13 @@ function Upload() {
           )}
         </div>
 
-        <form className="upload-form">
+        <form
+          className="upload-form"
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleUpload();
+          }}
+        >
           <div className="field">
             <label htmlFor="title">タイトル *</label>
             <input
@@ -134,7 +136,6 @@ function Upload() {
             type="submit"
             className="submit-btn"
             disabled={!title.trim() || !image}
-            onClick={handleUpload}
           >
             投稿する
           </button>
