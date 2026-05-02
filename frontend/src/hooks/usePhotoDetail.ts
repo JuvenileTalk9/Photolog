@@ -31,9 +31,12 @@ export function usePhotoDetail() {
       navigate("/");
     },
     onError: (error) => {
+      // TODO エラー表示
       console.error("更新に失敗しました：", error);
     },
   });
+
+  // TODO 削除API呼び出し
 
   const title = titleOverride ?? photo?.title ?? "";
   const comment = commentOverride ?? photo?.comment ?? "";
@@ -45,6 +48,8 @@ export function usePhotoDetail() {
     if (!id) return;
     saveMutation.mutate({ title, comment, location });
   };
+
+  // TODO 削除ハンドラ
 
   return {
     title,

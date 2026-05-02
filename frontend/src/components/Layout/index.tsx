@@ -30,6 +30,9 @@ function Layout() {
               <line x1="21" y1="21" x2="16.65" y2="16.65" />
             </svg>
             <input type="text" placeholder="タイトル・撮影場所で検索" />
+            {
+              // TODO 検索機能
+            }
           </div>
           <button className="upload-btn" onClick={() => navigate("/upload")}>
             + 投稿

@@ -110,6 +110,9 @@ function Detail() {
             </label>
           </div>
           {getContents()}
+          {
+            // TODO 削除機能
+          }
         </div>
       </div>
     </div>

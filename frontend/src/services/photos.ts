@@ -63,3 +63,5 @@ export async function updatePhoto(
 
   if (!response.ok) throw new Error(`更新に失敗しました：${response.status}`);
 }
+
+// TODO 削除API呼び出し

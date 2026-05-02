@@ -29,6 +29,7 @@ export function useUploadPhoto() {
       navigate("/");
     },
     onError: (error) => {
+      // TODO エラー表示
       console.error("投稿に失敗しました：", error);
     },
   });
