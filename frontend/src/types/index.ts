@@ -1,4 +1,4 @@
-export interface PhotoOverView {
+export interface PhotoOverview {
   id: number;
   title: string;
   thumbnail: string;
